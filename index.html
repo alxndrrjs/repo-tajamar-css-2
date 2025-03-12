@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Práctica 2 CSS - Portafolio web interactivo</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,6 +13,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "rlclM7d7WuR8CPBqO",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('service_zn5inde', 'template_nhi7a2n', this)
+                    .then(() => {
+                        form.reset();
+                    }, (error) => {
+                        console.log('hubo un error al envíar el formulario', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -258,6 +281,38 @@
         <img src="assets/proyecto-img/ejercicio-css-2-anterior.png" alt="">
     </dialog>
 
+    <!-- Sección 3: Formulario de contactos responsivo -->
+    <section id="contact" class="contact sec-pad dynamicBg background-gradient">
+        <div class="main-container">
+            <h2 class="heading heading-sec heading-sec__mb-med">
+                <span class="heading-sec__main heading-sec__main--lt">
+                    Contacto
+                </span>
+                <span class="heading-sec__sub heading-sec__sub--lt">
+                    No dudes en ponerte en contacto conmigo enviando el formulario a continuación 
+                    y podremos trabajar en tu proyecto o hablar de Los Simpson, lo que tú quieras.
+                </span>
+            </h2>
+        </div>
+        <div class="contact__form-container">
+            <form id="contact-form" class="contact__form">
+                <div class="contact__form-field">
+                    <label class="contact__form-label" for="name">Nombre</label>
+                    <input required type="text" placeholder="Ingresa tu nombre" class="contact__form-input" name="name" id="name">
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-label" for="email">Correo electrónico</label>
+                    <input required type="email" placeholder="Ingresa tu correo electrónico" class="contact__form-input" name="email" id="email">
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-label" for="message">Mensaje</label>
+                    <textarea required typecols="30" rows="10" class="contact__form-input" placeholder="Ingresa tu mensaje" name="message" id="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn--theme contact__btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+    
     <script>
         const previews = document.querySelectorAll('.open-preview');
         const body = document.body;

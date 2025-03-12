@@ -22,6 +22,13 @@
     /* Variables para propiedades de botones de proyectos */
     --btn-color-web: rgb(120, 67, 233);
     --btn-color-repo: rgb(51, 51, 51);
+
+    /* Variables para propiedades de la sección formulario */
+    --color-label: #666;
+    --color-text-input: #333;
+    --input-border: #ebebeb;
+    --background-input: #ebebeb;
+
 }
 
 *, ::after, ::before {
@@ -66,6 +73,15 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     unicode-bidi: isolate;
+}
+
+label {
+    cursor: default;
+}
+
+button {
+    border: none;
+    cursor: pointer;
 }
 
 img {
@@ -650,6 +666,80 @@ dialog[open]::backdrop {
 .btn--sl {
     padding: 0.5rem 1.3rem;
     font-size: 1.1rem;
+}
+
+/* ======== Propiedades de la sección contact ======== */
+.background-gradient {
+    background: var(--gradient-background);
+    background-position: center;
+}
+
+.heading-sec__mb-med {
+    margin-bottom: 9rem;
+}
+
+.heading-sec__main--lt {
+    color: var(--color-text);
+    font-weight: 800;
+}
+
+.heading-sec__sub--lt {
+    color: var(--color-text);
+}
+
+/* Propiedades del formulario */
+.contact__form-container {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: var(--color-background);
+    padding: 4rem;
+    margin-top: 6rem;
+    max-width: 80rem;
+    text-align: right;
+    width: 95%;
+    border-radius: 5px;
+    margin: 5rem auto 0 auto;
+}
+
+.contact__form-field {
+    margin-bottom: 4rem;
+}
+
+.contact__form-label {
+    color: var(--color-label);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: left;
+}
+
+.btn--theme {
+    background: var(--color-btn);
+    color: var(--color-text-btn);
+}
+
+.contact__btn {
+    width: 30%;
+    padding: 2rem 4rem;
+    font-size: 1.6rem;
+}
+
+.contact__form-input {
+    color: var(--color-text-input);
+    padding: 2rem;
+    width: 100%;
+    border: 1px solid var(--input-border);
+    font-size: 1.6rem;
+    letter-spacing: 0px;
+    background: var(--background-input);
+    border-radius: 5px;
+    font-weight: 600;
+    outline: none;
+}
+
+textarea {
+    resize: none;
 }
 
 /* ======== Propiedades del footer ======== */
