@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -145,42 +147,144 @@
             </h2>
             <div class="projects__content">
                 <article class="proyecto">
-                    <img src="" alt="" class="proyecto-img">
-                    <div>
-                        <h3 class="proyecto-content-title">Repositorio</h3>
-                        <p class="proyecto-content-desc">asdasdadasdw</p>
+                    <div class="proyecto-preview">
+                        <img src="assets/proyecto-img/ejercicio-html-1.png" alt="" class="proyecto-img">
+                        <div data-dialog="proyecto-preview__1" class="overlay open-preview">
+                            <div class="texto-overlay">Ver</div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3 class="proyecto-content-title">Prática 1 HTML</h3>
+                        <div class="proyecto-content-details">
+                            <p class="proyecto-content-desc">Ejercicios básicos de HTML</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-btns">
+                        <a href="https://github.com/alxndrrjs/repo-tajamar-html-1.git" class="btn-repo btn--sl" target="_blank">Repositorio</a>
                     </div>
                 </article>
                 <article class="proyecto">
-                    <img src="" alt="" class="proyecto-img">
-                    <div>
-                        <h3 class="proyecto-content-title">Repositorio</h3>
-                        <p>asdasdadasdw</p>
+                    <div class="proyecto-preview">
+                        <img src="assets/proyecto-img/ejercicio-html-2.png" alt="" class="proyecto-img">
+                        <div data-dialog="proyecto-preview__2" class="overlay open-preview">
+                            <div class="texto-overlay">Ver</div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3 class="proyecto-content-title">Práctica 2 HTML</h3>
+                        <div class="proyecto-content-details">
+                            <p class="proyecto-content-desc">Navegación básica entre archivos HTML</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-btns">
+                        <a href="https://github.com/alxndrrjs/repo-tajamar-html-2.git" class="btn-repo btn--sl" target="_blank">Repositorio</a>
                     </div>
                 </article>
                 <article class="proyecto">
-                    <img src="" alt="" class="proyecto-img">
-                    <div>
-                        <h3 class="proyecto-content-title">Repositorio</h3>
-                        <p>asdasdadasdw</p>
+                    <div class="proyecto-preview">
+                        <img src="assets/proyecto-img/ejercicio-html-3.png" alt="" class="proyecto-img">
+                        <div data-dialog="proyecto-preview__3" class="overlay open-preview">
+                            <div class="texto-overlay">Ver</div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3 class="proyecto-content-title">Práctica 3 HTML</h3>
+                        <div class="proyecto-content-details">
+                            <p class="proyecto-content-desc">Formulario HTML</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-btns">
+                        <a href="https://github.com/alxndrrjs/repo-tajamar-html-3.git" class="btn-repo btn--sl" target="_blank">Repositorio</a>
                     </div>
                 </article>
                 <article class="proyecto">
-                    <img src="" alt="" class="proyecto-img">
-                    <div>
-                        <h3 class="proyecto-content-title">Repositorio</h3>
-                        <p>asdasdadasdw</p>
+                    <div class="proyecto-preview">
+                        <img src="assets/proyecto-img/ejercicio-css-1.png" alt="" class="proyecto-img">
+                        <div  data-dialog="proyecto-preview__4" class="overlay open-preview">
+                            <div class="texto-overlay">Ver</div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3 class="proyecto-content-title">Práctica 1 CSS</h3>
+                        <div class="proyecto-content-details">
+                            <p class="proyecto-content-desc">Ejercicios básicos de CSS</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-btns">
+                        <a href="https://alxndrrjs.github.io/repo-tajamar-css-1/" class="btn-web btn--sl" target="_blank">Visitar web</a>
+                        <a href="https://github.com/alxndrrjs/repo-tajamar-css-1.git" class="btn-repo btn--sl" target="_blank">Repositorio</a>
                     </div>
                 </article>
                 <article class="proyecto">
-                    <img src="" alt="" class="proyecto-img">
-                    <div>
-                        <h3 class="proyecto-content-title">Repositorio</h3>
-                        <p>asdasdadasdw</p>
+                    <div class="proyecto-preview">
+                        <img src="assets/proyecto-img/ejercicio-css-2-anterior.png" alt="" class="proyecto-img">
+                        <div data-dialog="proyecto-preview__5" class="overlay open-preview">
+                            <div class="texto-overlay">Ver</div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3 class="proyecto-content-title">Práctica 2 CSS anterior</h3>
+                        <div class="proyecto-content-details">
+                            <p class="proyecto-content-desc">Pruebas para ejercicios de CSS</p>
+                        </div>
+                    </div>
+                    <div class="proyecto-btns">
+                        <a href="https://github.com/alxndrrjs/repo-tajamar-css-2-anterior.git" class="btn-repo btn--sl" target="_blank">Repositorio</a>
                     </div>
                 </article>
             </div>
         </div>
     </section>
+
+    <!-- Visualización de pantallazos -->
+    <dialog id="proyecto-preview__1">
+        <button class="close"><i class="fas fa-times"></i></button>
+        <img src="assets/proyecto-img/ejercicio-html-1.png" alt="">
+    </dialog>
+    <dialog id="proyecto-preview__2">
+        <button class="close"><i class="fas fa-times"></i></button>
+        <img src="assets/proyecto-img/ejercicio-html-2.png" alt="">
+    </dialog>
+    <dialog id="proyecto-preview__3">
+        <button class="close"><i class="fas fa-times"></i></button>
+        <img src="assets/proyecto-img/ejercicio-html-3.png" alt="">
+    </dialog>
+    <dialog id="proyecto-preview__4">
+        <button class="close"><i class="fas fa-times"></i></button>
+        <img src="assets/proyecto-img/ejercicio-css-1.png" alt="">
+    </dialog>
+    <dialog id="proyecto-preview__5">
+        <button class="close"><i class="fas fa-times"></i></button>
+        <img src="assets/proyecto-img/ejercicio-css-2-anterior.png" alt="">
+    </dialog>
+
+    <script>
+        const previews = document.querySelectorAll('.open-preview');
+        const body = document.body;
+
+        previews.forEach(preview => {
+            preview.addEventListener('click', function() {
+
+                // Obtener el ID del diálogo desde el atributo 'data-dialog'
+                const dialogId = preview.getAttribute('data-dialog');
+                const dialog = document.getElementById(dialogId);
+
+                if (dialog) {
+                    dialog.showModal();  // Mostrar la preview
+                    body.style.overflow = 'hidden';  // Desactivar el desplazamiento del body
+                }
+            });
+        });
+
+        document.querySelectorAll('dialog button').forEach(closeButton => {
+            closeButton.addEventListener('click', function() {
+                const dialog = closeButton.closest('dialog');
+                if (dialog) {
+                    dialog.close();  // Cerrar la preview
+                    body.style.overflow = '';  // Restaurar  el desplazamiento del body
+                }
+            });
+        });
+    </script>
 </body>
 </html>

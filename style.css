@@ -18,6 +18,10 @@
     /* Variables para propiedades de section about */
     --color-second: rgb(120, 67, 233);
     --color-background-about: #fafafa;
+
+    /* Variables para propiedades de botones de proyectos */
+    --btn-color-web: rgb(120, 67, 233);
+    --btn-color-repo: rgb(51, 51, 51);
 }
 
 *, ::after, ::before {
@@ -39,6 +43,10 @@ body {
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 section {
@@ -441,6 +449,11 @@ strong {
 }
 
 /* ======== Propiedades del section projects ======== */
+
+.heading-sec__mb-bg {
+    margin-bottom: 11rem;
+}
+
 .projects__content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -455,20 +468,188 @@ strong {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.proyecto-content {
+    padding: 2rem 0;
 }
 
 .proyecto-content-title {
+    text-align: center;
     font-weight: 700;
     font-size: 2.8rem;
-    margin-bottom: 2rem;
+    margin: 0.5rem 1rem;
 }
 
 .proyecto-content-desc {
-    font-size: 1.8rem;
-    color: var(--color-sub-text);
+    font-size: 1.5rem;
+    color: var(--color-sub-text);   
     max-width: 60rem;
     line-height: 1.7;
-    margin-bottom: 3rem;
+    margin: 1rem;
+}
+
+.proyecto-content-details {
+    height: 50px;
+}
+
+.proyecto-img {
+    width: 100%;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    transition: width .3s;
+}
+
+/* Pre visualización de proyectos */
+.proyecto-preview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+
+.overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.texto-overlay {
+    color: var(--color-links);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+dialog {
+    padding: 0;
+    border-radius: 5px;
+    border: none;
+    background: transparent;
+    max-height: 100%;
+    max-width:80%;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+}
+
+dialog:focus {
+    outline: none;
+}
+
+dialog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Animación de entrada y salida */
+dialog[open] {
+    scale: 1;
+    transition: scale .3s ease-in-out;
+
+    @starting-style {
+        opacity: 0;
+        scale: 0;
+    }
+}
+
+dialog {
+    transition: scale .3s ease, display .3s ease allow-discrete;
+    scale: 0;
+}
+
+/* Animación sencilla del fondo (backdrop) */
+dialog::backdrop {
+    opacity: 0;
+    background-color: #0008;
+    transition: opacity 500ms ease-out, display 600ms allow-discrete;
+}
+  
+dialog[open]::backdrop {
+    background-color: #0008;
+    opacity: 1;
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        opacity: 0;
+    }
+}
+
+/* Botón de cierre de preview */
+.close {
+    outline: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: var(--color-sub-text);
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--color-btn);
+}
+
+/* Botones de proyectos */
+.proyecto-btns {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.btn-web {
+    background: var(--btn-color-web);
+    color: var(--color-text-btn);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: transform .3s;
+}
+
+.btn-repo {
+    background: var(--btn-color-repo);
+    color: var(--color-text-btn);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: transform .3s;
+}
+
+.btn--sl {
+    padding: 0.5rem 1.3rem;
+    font-size: 1.1rem;
 }
 
 /* ======== Propiedades del footer ======== */
