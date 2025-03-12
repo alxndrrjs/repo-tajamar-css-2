@@ -18,22 +18,9 @@
     <script type="text/javascript">
         (function() {
             emailjs.init({
-              publicKey: "rlclM7d7WuR8CPBqO",
+              publicKey: "rlclM7d7WuR8CPBqO", // Colocar Key pública
             });
         })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                emailjs.sendForm('service_zn5inde', 'template_nhi7a2n', this)
-                    .then(() => {
-                        form.reset();
-                    }, (error) => {
-                        console.log('hubo un error al envíar el formulario', error);
-                    });
-            });
-        }
     </script>
 </head>
 <body>
@@ -281,7 +268,7 @@
         <img src="assets/proyecto-img/ejercicio-css-2-anterior.png" alt="">
     </dialog>
 
-    <!-- Sección 3: Formulario de contactos responsivo -->
+    <!-- Sección 3: Formulario de contacto responsivo -->
     <section id="contact" class="contact sec-pad dynamicBg background-gradient">
         <div class="main-container">
             <h2 class="heading heading-sec heading-sec__mb-med">
@@ -323,7 +310,7 @@
                 // Obtener el ID del diálogo desde el atributo 'data-dialog'
                 const dialogId = preview.getAttribute('data-dialog');
                 const dialog = document.getElementById(dialogId);
-
+                
                 if (dialog) {
                     dialog.showModal();  // Mostrar la preview
                     body.style.overflow = 'hidden';  // Desactivar el desplazamiento del body
@@ -340,6 +327,23 @@
                 }
             });
         });
+    </script>
+
+    <!-- Script para enviar el formulario a mi correo personal -->
+    <script type="text/javascript">
+        const form = document.getElementById('contact-form');
+
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('service_zn5inde', 'template_nhi7a2n', this) // Colocar ID service y ID template 
+                    .then(() => {
+                        form.reset();
+                    }, (error) => {
+                        console.log('Hubo un error al envíar el formulario', error);
+                    });
+            });
+        }
     </script>
 </body>
 </html>
